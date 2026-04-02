@@ -466,10 +466,18 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
         this.classList.add('active');
     });
 });
+</script>
+<script>
+document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+    link.classList.remove('active');
+    if (link.href && window.location.href.indexOf(link.getAttribute('href')) !== -1) {
+        link.classList.add('active');
+    }
+});
 
 function switchLanguage(lang) {
     if (lang === 'th') {
-        window.location.href = 'th.html';
+        window.location.href = 'th-service.html';
     } else if (lang === 'en') {
         window.location.href = 'service.html';
     }
