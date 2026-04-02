@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>PW Interior Renovation - Construction Company Website Template</title>
+        <title>PW Interior Renovation</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Construction Company Website Template" name="keywords">
         <meta content="Construction Company Website Template" name="description">
@@ -33,22 +33,22 @@
             <div class="top-bar">
                 <div class="container-fluid">
                     <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-12">
+                        <div class="col-lg-6 col-md-12">
                             <div class="logo">
                                 <a href="index.html">
-                                    <h1>PW Interior Renovation</h1>
+                                    <h1 style="font-size: clamp(18px, 4vw, 38px); white-space: nowrap;">PW Interior Renovation</h1>
                                     <!-- <img src="img/logo.jpg" alt="Logo"> -->
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-7 d-none d-lg-block">
+                        <div class="col-lg-6 col-md-7 d-none d-lg-block">
                             <div class="row justify-content-end">
                                 <div class="col-4">
                                     <div class="top-bar-item">
                                         
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-12">
                                     <div class="top-bar-item">
                                         <div class="top-bar-icon">
                                             <i class="flaticon-call"></i>
@@ -75,22 +75,23 @@
                         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-
+                        
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto">
                                 <a href="index.html" class="nav-item nav-link active">Home</a>   
                                 <a href="service.html" class="nav-item nav-link">Service</a>
                                 <a href="contact.html" class="nav-item nav-link">Contact</a>
                             </div>
-                            <!-- ลิงค์เปลี่ยนภาษา -->
-                            <div class="navbar-nav">
-                                <a href="index.html" class="nav-item nav-link lang-link">EN</a>
-                                <span class="nav-item nav-link">|</span>
-                                <a href="th.html" class="nav-item nav-link lang-link">TH</a>
-                            </div>
-                    </nav>
+                <!-- ลิงค์เปลี่ยนภาษา -->
+                <div class="navbar-nav flex-row align-items-center" style="gap: 0;">
+                    <a href="index.html" onclick="switchLanguage('en'); return false;" class="nav-link lang-link" style="padding: 0.5rem 8px;">EN</a>
+                    <span class="nav-link" style="padding: 0; color: white;">|</span>
+                    <a href="th.html" onclick="switchLanguage('th'); return false;" class="nav-link lang-link" style="padding: 0.5rem 8px;">TH</a>
                 </div>
             </div>
+        </nav>
+    </div>
+</div>
             <!-- Nav Bar End -->
             
             
@@ -306,5 +307,34 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- Language Switcher -->
+<script>
+// Active nav link highlight
+document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(function(l) {
+            l.classList.remove('active');
+        });
+        this.classList.add('active');
+    });
+});
+</script>
+<script>
+document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+    link.classList.remove('active');
+    if (link.href && window.location.href.indexOf(link.getAttribute('href')) !== -1) {
+        link.classList.add('active');
+    }
+});
+
+function switchLanguage(lang) {
+    if (lang === 'th') {
+        window.location.href = 'th-service.html';
+    } else if (lang === 'en') {
+        window.location.href = 'service.html';
+    }
+}
+</script>
     </body>
 </html>
