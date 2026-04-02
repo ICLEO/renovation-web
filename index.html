@@ -27,18 +27,24 @@
         <link href="css/style.css" rel="stylesheet">
 
         <style>
-            .language-switcher {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-            }
-            .lang-link {
-                text-decoration: none;
-                color: white;
-                cursor: pointer;
-                margin: 0 5px;
-            }
-            .lang-link:hover {
+            .logo a h1 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .logo a h1 {
+            font-size: clamp(14px, 5vw, 22px) !important;
+            white-space: nowrap;
+        }
+            .top-bar-item {
+            display: none;
+        }
+    }
+
+        .language-switcher {
                 text-decoration: underline;
             }
         </style>
@@ -53,7 +59,7 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="logo">
                                 <a href="index.html">
-                                    <h1 style="font-size: clamp(20px, 2.5vw, 38px); white-space: nowrap;">PW Interior Renovation</h1>
+                                    <h1 style="font-size: clamp(18px, 4vw, 38px); white-space: nowrap;">PW Interior Renovation</h1>
                                     <!-- <img src="img/logo.jpg" alt="Logo"> -->
                                 </a>
                             </div>
